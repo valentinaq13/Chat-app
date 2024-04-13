@@ -11,7 +11,6 @@ const Login = ({ navigation }) => {
     const [passwordError, setPasswordError] = React.useState("");
 
     const validateEmail = (email) => {
-        // Expresión regular para validar el formato de un correo electrónico
         const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
         return emailPattern.test(email);
     };
@@ -20,13 +19,13 @@ const Login = ({ navigation }) => {
         if (!validateEmail(user)) {
             setUserError("Correo electrónico inválido");
         } else {
-            setUserError(""); // Reiniciar el error si el correo es válido
+            setUserError(""); 
         }
 
         if (password.length < 6) {
             setPasswordError("La contraseña debe tener al menos 6 caracteres");
         } else {
-            setPasswordError(""); // Reiniciar el error si la contraseña tiene al menos 6 caracteres
+            setPasswordError(""); 
         }
 
         if (validateEmail(user) && password.length >= 6) {
